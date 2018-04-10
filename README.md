@@ -1,7 +1,7 @@
 # artable-setup-1
 ARTable setup in Robolab@FIT. The first of its kind.
 
-[ARTable - setup 1](https://i.imgur.com/RhbgPBf.jpg)
+![ARTable - setup 1](https://i.imgur.com/RhbgPBf.jpg)
 
 The setup consists of:
   * Robust workshop table.
