@@ -8,7 +8,7 @@
 
     <machine name="$(arg machine_name)" address="$(arg address)" user="$(arg user)" env-loader="$(arg env_loader)"/>
 
-    <include file="$(find art_projected_gui)/launch/projector.launch">
+    <include file="$(find art_projector)/launch/projector.launch">
       <arg name="machine" value="$(arg machine_name)"/>
     </include>
 
