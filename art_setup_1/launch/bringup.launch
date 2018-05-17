@@ -38,6 +38,8 @@
         <arg name="machine" value="n1"/>
     </include>
 
+    <include file="$(find art_collision_env)/launch/node.launch"/>
+
     <node name="static_tf_markern1" pkg="tf" type="static_transform_publisher" args="1.29 0.122 0 0 0 0 /marker /marker_n1 100" />
 
 </launch>
