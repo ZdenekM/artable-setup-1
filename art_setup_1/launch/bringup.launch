@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
+    <param name="/art/visual_inspection/topic" value="/kinect_head/rgb/image_color"/>
+    <param name="/art/visual_inspection/origin" value="0.3,0.3"/>
+    <param name="/art/visual_inspection/size" value="0.2,0.1"/>
+
     <!-- TODO fix "Machine [localhost] already added and does not match duplicate entry" issue -->
     <include file="$(find art_setup_1)/launch/nuc.xml">
       <arg name="machine_name" value="n1"/>
