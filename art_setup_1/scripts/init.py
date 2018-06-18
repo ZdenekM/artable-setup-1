@@ -64,7 +64,8 @@ def main(args):
     api.clear_collision_primitives(setup)
 
     table_width = 1.5
-    api.add_collision_primitive(makePrimitive("table", [table_width, 0.7, 0.7], z=-0.7 / 2))
+    table_depth = 0.7
+    api.add_collision_primitive(makePrimitive("table", [table_width, table_depth, 0.78], z=-0.78 / 2))
 
     feeder_depth = 0.35
     feeder_thickness = 0.001
@@ -72,23 +73,23 @@ def main(args):
 
     # left feeder (1)
     api.add_collision_primitive(
-        makePrimitive("lf-front", [feeder_depth, feeder_thickness, 0.3], x=-feeder_depth / 2, y=feeder_front_to_table))
+        makePrimitive("lf-front", [feeder_depth, feeder_thickness, 0.2], x=-feeder_depth / 2 - feeder_front_to_table, y=table_depth-0.495))
     api.add_collision_primitive(
-        makePrimitive("lf-middle", [feeder_depth, feeder_thickness, 0.4], x=-feeder_depth / 2,
-                      y=feeder_front_to_table + 0.2))
+        makePrimitive("lf-middle", [feeder_depth, feeder_thickness, 0.39], x=-feeder_depth / 2 - feeder_front_to_table,
+                      y=table_depth-0.18))
     api.add_collision_primitive(
-        makePrimitive("lf-rear", [feeder_depth, feeder_thickness, 0.4], x=-feeder_depth / 2,
-                      y=feeder_front_to_table + 0.46))
+        makePrimitive("lf-rear", [feeder_depth, feeder_thickness, 0.39], x=-feeder_depth / 2 - feeder_front_to_table,
+                      y=table_depth))
 
     # right feeder (2)
     api.add_collision_primitive(makePrimitive(
-        "rf-front", [feeder_depth, feeder_thickness, 0.3], x=table_width + feeder_depth / 2, y=feeder_front_to_table))
+        "rf-front", [feeder_depth, feeder_thickness, 0.175], x=table_width + feeder_depth / 2 + feeder_front_to_table, y=table_depth-0.495))
     api.add_collision_primitive(
-        makePrimitive("rf-middle", [feeder_depth, feeder_thickness, 0.4], x=table_width + feeder_depth / 2,
-                      y=feeder_front_to_table + 0.2))
+        makePrimitive("rf-middle", [feeder_depth, feeder_thickness, 0.35], x=table_width + feeder_depth / 2 + feeder_front_to_table,
+                      y=table_depth-0.18))
     api.add_collision_primitive(
-        makePrimitive("rf-rear", [feeder_depth, feeder_thickness, 0.4], x=table_width + feeder_depth / 2,
-                      y=feeder_front_to_table + 0.46))
+        makePrimitive("rf-rear", [feeder_depth, feeder_thickness, 0.35], x=table_width + feeder_depth / 2 + feeder_front_to_table,
+                      y=table_depth))
 
     rospy.loginfo("Done!")
 

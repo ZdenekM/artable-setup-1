@@ -10,6 +10,7 @@
 
     <include file="$(find art_projector)/launch/projector.launch">
       <arg name="machine" value="$(arg machine_name)"/>
+      <arg name="padding_top" value="100"/>
     </include>
 
     <include file="$(find art_calibration)/launch/calibration_marker_detector.launch">
