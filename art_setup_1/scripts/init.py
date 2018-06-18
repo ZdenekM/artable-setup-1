@@ -9,6 +9,7 @@ import os
 
 setup = None
 
+# TODO n1_kinect2_link, n2_kinect2_link (0.3)
 
 def makePrimitive(name, dim, x=None, y=None, z=None, ori=(0, 0, 0, 1), frame_id="marker"):
 
