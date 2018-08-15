@@ -10,6 +10,9 @@
     <param name="/art/visual_inspection/origin" value="0.3,0.3"/>
     <param name="/art/visual_inspection/size" value="0.2,0.1"/>
 
+    <rosparam command="delete" param="/art/interface/projected_gui/plugins"/>
+    <rosparam command="load" ns="/art/interface/projected_gui/plugins" file="$(find art_setup_1)/config/gui-plugins.yaml"/>
+
     <include file="$(find art_simple_tracker)/launch/art_simple_tracker.launch">
         <arg name="ground_objects_on_table" value="true"/>
     </include>
@@ -34,7 +37,6 @@
     </include>
 
     <include file="$(find art_projected_gui)/launch/app.launch">
-        <arg name="projectors" value="n2"/>
         <arg name="scene_server" value="192.168.104.200"/>
         <arg name="scene_size" value="1.5, 0.7"/>
         <arg name="scene_origin" value="0.0, 0.0"/>
