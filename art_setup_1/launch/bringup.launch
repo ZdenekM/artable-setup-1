@@ -15,6 +15,7 @@
 
     <include file="$(find art_simple_tracker)/launch/art_simple_tracker.launch">
         <arg name="ground_objects_on_table" value="true"/>
+        <arg name="ground_bb_axis" value="0"/>
     </include>
 
     <!-- TODO fix "Machine [localhost] already added and does not match duplicate entry" issue -->
