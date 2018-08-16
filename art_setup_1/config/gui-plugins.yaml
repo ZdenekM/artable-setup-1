@@ -12,7 +12,7 @@ plugins:
   ProjectorsPlugin:
       package: art_projected_gui.plugins
       params:
-        projectors: "n2"
+        projectors: ["n2"]
 
   SoundPlugin:
       package: art_projected_gui.plugins
