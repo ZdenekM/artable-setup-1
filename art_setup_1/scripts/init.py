@@ -103,6 +103,14 @@ def main(args):
     api.store_object_type(obj_type("ShortLeg", 0.046, 0.046, 0.298))
     api.store_object_type(obj_type("LongLeg", 0.046, 0.046, 0.398))
 
+    api.store_object_type(obj_type("Spojka", 0.046, 0.046, 0.154))
+    api.store_object_type(obj_type("Kratka_noha", 0.046, 0.046, 0.298))
+    api.store_object_type(obj_type("Dlouha_noha", 0.046, 0.046, 0.398))
+    api.store_object_type(obj_type("Modry_kontejner", 0.11, 0.165, 0.075, container=True))
+    api.store_object_type(obj_type("Bily_kontejner_velky", 0.245, 0.37, 0.15, container=True))
+    api.store_object_type(obj_type("Bily_kontejner_maly", 0.18, 0.245, 0.15, container=True))
+
+
     # delete all created programs
     ph = api.get_program_headers()
     if ph:

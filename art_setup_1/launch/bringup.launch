@@ -22,11 +22,13 @@
     <include file="$(find art_setup_1)/launch/nuc.xml">
       <arg name="machine_name" value="n1"/>
       <arg name="address" value="artable-n1"/>
+      <arg name="disable_projector" value="true"/>
     </include>
 
     <include file="$(find art_setup_1)/launch/nuc.xml">
       <arg name="machine_name" value="n2"/>
       <arg name="address" value="artable-n2"/>
+      <arg name="disable_projector" value="false"/>
     </include>
 
     <include file="$(find art_calibration)/launch/pr2_indiv.launch" />
@@ -60,5 +62,9 @@
     <include file="$(find art_utils)/launch/rosparam_services.launch"/>
 
     <node name="static_tf_markern1" pkg="tf" type="static_transform_publisher" args="1.29 0.122 0 0 0 0 /marker /marker_n1 100" />
+
+    <node name="rosserial" pkg="rosserial_python" type="serial_node.py" machine="n1" />
+
+    <node name="art_led" pkg="art_led" type="node" machine="n1" /> 
 
 </launch>
