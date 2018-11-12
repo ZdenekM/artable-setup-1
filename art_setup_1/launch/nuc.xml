@@ -5,11 +5,13 @@
     <arg name="address" default="localhost"/>
     <arg name="user" default="dev"/>
     <arg name="env_loader" default="/home/dev/env.sh"/>
+    <arg name="disable_projector" default="false"/>
 
     <machine name="$(arg machine_name)" address="$(arg address)" user="$(arg user)" env-loader="$(arg env_loader)"/>
 
-    <include file="$(find art_projector)/launch/projector.launch">
+    <include file="$(find art_projector)/launch/projector.launch" unless="$(arg disable_projector)">
       <arg name="machine" value="$(arg machine_name)"/>
+      <arg name="padding_top" value="100"/>
     </include>
 
     <include file="$(find art_calibration)/launch/calibration_marker_detector.launch">

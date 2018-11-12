@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+    
+
+    <include file="$(find art_touch_driver)/launch/touch.launch">
+        <arg name="calib_x_min" value="0.3"/>
+        <arg name="calib_x_max" value="1.1"/>
+        <arg name="calib_y_min" value="0.15"/>
+        <arg name="calib_y_max" value="0.55"/>
+    </include>
+
+
+</launch>

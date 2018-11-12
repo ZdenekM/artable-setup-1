@@ -1,15 +1,34 @@
 <?xml version="1.0"?>
 <launch>
 
+    <group ns="/art/conf">
+      <param name="table/size" value="1.5,0.7"/>
+    </group>
+
+    <!-- TODO this should be params of the instruction -->
+    <param name="/art/visual_inspection/topic" value="/art/n2/kinect2/qhd/image_color"/>
+    <param name="/art/visual_inspection/origin" value="0.5,0.3"/>
+    <param name="/art/visual_inspection/size" value="0.3,0.2"/>
+
+    <rosparam command="delete" param="/art/interface/projected_gui/plugins"/>
+    <rosparam command="load" ns="/art/interface/projected_gui/plugins" file="$(find art_setup_1)/config/gui-plugins.yaml"/>
+
+    <include file="$(find art_simple_tracker)/launch/art_simple_tracker.launch">
+        <arg name="ground_objects_on_table" value="true"/>
+        <arg name="ground_bb_axis" value="0"/>
+    </include>
+
     <!-- TODO fix "Machine [localhost] already added and does not match duplicate entry" issue -->
     <include file="$(find art_setup_1)/launch/nuc.xml">
       <arg name="machine_name" value="n1"/>
       <arg name="address" value="artable-n1"/>
+      <arg name="disable_projector" value="true"/>
     </include>
 
     <include file="$(find art_setup_1)/launch/nuc.xml">
       <arg name="machine_name" value="n2"/>
       <arg name="address" value="artable-n2"/>
+      <arg name="disable_projector" value="false"/>
     </include>
 
     <include file="$(find art_calibration)/launch/pr2_indiv.launch" />
@@ -21,7 +40,6 @@
     </include>
 
     <include file="$(find art_projected_gui)/launch/app.launch">
-        <arg name="projectors" value="n2"/>
         <arg name="scene_server" value="192.168.104.200"/>
         <arg name="scene_size" value="1.5, 0.7"/>
         <arg name="scene_origin" value="0.0, 0.0"/>
@@ -40,6 +58,13 @@
 
     <include file="$(find art_collision_env)/launch/node.launch"/>
 
+    <include file="$(find art_bridge)/launch/bridge_to_json_msg.launch"/>
+    <include file="$(find art_utils)/launch/rosparam_services.launch"/>
+
     <node name="static_tf_markern1" pkg="tf" type="static_transform_publisher" args="1.29 0.122 0 0 0 0 /marker /marker_n1 100" />
+
+    <node name="rosserial" pkg="rosserial_python" type="serial_node.py" machine="n1" />
+
+    <node name="art_led" pkg="art_led" type="node" machine="n1" /> 
 
 </launch>
