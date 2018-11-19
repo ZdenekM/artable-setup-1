@@ -1,4 +1,4 @@
-# artable-setup-1
+# arcor-setup-1
 ARCOR setup in Robolab@FIT. The first of its kind.
 
 ![ARCOR - setup 1](https://i.imgur.com/RhbgPBf.jpg)
