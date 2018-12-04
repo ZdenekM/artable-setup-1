@@ -25,7 +25,7 @@
       <arg name="base_name_tf" value="$(arg machine_name)_kinect2"/>
       <arg name="respawn" value="false"/>
       <arg name="publish_tf" value="true"/>
-      <arg name="calib_path" value="$(find art_bringup)/setups/$(optenv ARTABLE)/data/"/>
+      <arg name="calib_path" value="$(find art_setup_1)/data/"/>
       <arg name="max_depth" value="1.8"/>
     </include>
 
