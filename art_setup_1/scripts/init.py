@@ -75,16 +75,16 @@ def main(args):
     feeder_front_to_table = 0.15
 
     # left feeder (1)
-    # api.add_collision_primitive(
-    #     makePrimitive("lf-front", [feeder_depth, feeder_thickness, 0.2], x=-feeder_depth / 2 - feeder_front_to_table,
-    # y=table_depth-0.495))
-    # api.add_collision_primitive(
-    #     makePrimitive("lf-middle", [feeder_depth, feeder_thickness, 0.39],
-    # x=-feeder_depth / 2 - feeder_front_to_table,
-    #                  y=table_depth-0.18))
-    # api.add_collision_primitive(
-    #     makePrimitive("lf-rear", [feeder_depth, feeder_thickness, 0.39], x=-feeder_depth / 2 - feeder_front_to_table,
-    #                  y=table_depth))
+    api.add_collision_primitive(
+        makePrimitive("lf-front", [feeder_depth, feeder_thickness, 0.175], x=-feeder_depth / 2 - feeder_front_to_table,
+    y=table_depth-0.495))
+    api.add_collision_primitive(
+        makePrimitive("lf-middle", [feeder_depth, feeder_thickness, 0.35],
+    x=-feeder_depth / 2 - feeder_front_to_table,
+                     y=table_depth-0.18))
+    api.add_collision_primitive(
+        makePrimitive("lf-rear", [feeder_depth, feeder_thickness, 0.35], x=-feeder_depth / 2 - feeder_front_to_table,
+                     y=table_depth))
 
     # right feeder (2)
     api.add_collision_primitive(makePrimitive(
